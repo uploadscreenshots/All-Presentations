@@ -73,8 +73,11 @@
                     if (item.type === 'dir') {
                         contentHtml += `<li>📁 <a href="#" onclick="loadRepo('${item.path}')">${item.name}</a></li>`;
                     } else {
-                        const fileUrl = `https://uploadscreenshots.github.io/All-Presentations/${item.path}`;
-                        contentHtml += `<li>📄 <a href="${fileUrl}" target="_blank">${item.name}</a></li>`;
+                        if (item.name!="index.html") {
+                            
+                            const fileUrl = `https://uploadscreenshots.github.io/All-Presentations/${item.path}`;
+                            contentHtml += `<li>📄 <a href="${fileUrl}" target="_blank">${item.name}</a></li>`;
+                        }
                     }
                 });
                 contentHtml += '</ul>';
